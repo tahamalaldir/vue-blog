@@ -81,64 +81,52 @@ export default {
   font-size: 4rem;
 }
 .group {
-  margin-bottom: 20px;
-  margin-right: 20px;
-  width: 450px;
   float: left;
+  color: #41444b;
 }
 .card {
+  width: 450px;
   display: block;
+  top: 0px;
   position: relative;
-  max-width: 450px;
-  background-color: #41444b;
+  background-color: #f2f8f9;
   border-radius: 4px;
   padding: 32px 24px;
   margin: 12px;
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
-  float: left;
-  color: #41444b;
+  border: 1px solid #f2f8f9;
+}
+.card:hover {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+  border: 1px solid #cccccc;
+  background-color: white;
 }
 .card:before {
   content: '';
   position: absolute;
   z-index: -1;
-  top: -25px;
-  right: -25px;
+  top: -16px;
+  right: -16px;
   background: #41444b;
-  height: 50px;
-  width: 50px;
+  height: 32px;
+  width: 32px;
   border-radius: 32px;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(2);
+  transform: scale(2);
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-  color: #ffffff;
+  -webkit-transition: -webkit-transform 0.15s ease-out;
+  transition: -webkit-transform 0.15s ease-out;
+  transition: transform 0.15s ease-out;
+  transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
 }
 .card:hover:before {
-  -webkit-transform: scale(21);
-  transform: scale(21);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.card:hover {
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  color: rgba(255, 255, 255, 0.8);
-}
-.card:hover b-card-title {
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  color: #ffffff;
-}
-.deneme:hover {
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  color: #ffffff;
+  -webkit-transform: scale(2.15);
+  transform: scale(2.15);
 }
 </style>
