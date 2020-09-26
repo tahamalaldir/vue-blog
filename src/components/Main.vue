@@ -1,25 +1,54 @@
-<template>
-  <div class="work">
-    <h1 class="text">Work</h1>
-    <a
-      v-for="user in users"
-      :key="user.id"
-      :href="user.html_url"
-      target="blank"
+<template
+  ><div class="work">
+    <b-row><h1 class="text">Work</h1></b-row>
+    <b-row>
+      <a
+        v-for="user in users"
+        :key="user.id"
+        :href="user.html_url"
+        target="blank"
+      >
+        <b-card-group v-if="!user.fork" class="group"
+          ><b-card class="text-center">
+            <b-card-title>{{ user.name }}</b-card-title>
+            <b-card-footer>
+              <span v-if="user.language"
+                ><i class="fas fa-code"></i>&nbsp;
+              </span>
+              {{ user.language }}
+              <span><i class="fas fa-star"></i>&nbsp; </span
+              >{{ user.stargazers_count }}
+              <span><i class="fas fa-code-branch"></i>&nbsp; </span
+              >{{ user.forks_count }}
+            </b-card-footer>
+          </b-card></b-card-group
+        ></a
+      ></b-row
     >
-      <b-card-group class="group"
-        ><b-card class="text-center">
-          <b-card-title>{{ user.name }}</b-card-title>
-          <b-card-footer>
-            <span v-if="user.language"><i class="fas fa-code"></i>&nbsp; </span>
-            {{ user.language }}
-            <span><i class="fas fa-star"></i>&nbsp; </span
-            >{{ user.stargazers_count }}
-            <span><i class="fas fa-code-branch"></i>&nbsp; </span
-            >{{ user.forks_count }}
-          </b-card-footer>
-        </b-card></b-card-group
-      ></a
+    <b-row><h1 class="text">Fork</h1></b-row>
+    <b-row>
+      <a
+        v-for="user in users"
+        :key="user.id"
+        :href="user.html_url"
+        target="blank"
+      >
+        <b-card-group v-if="user.fork" class="group"
+          ><b-card class="text-center">
+            <b-card-title>{{ user.name }}</b-card-title>
+            <b-card-footer>
+              <span v-if="user.language"
+                ><i class="fas fa-code"></i>&nbsp;
+              </span>
+              {{ user.language }}
+              <span><i class="fas fa-star"></i>&nbsp; </span
+              >{{ user.stargazers_count }}
+              <span><i class="fas fa-code-branch"></i>&nbsp; </span
+              >{{ user.forks_count }}
+            </b-card-footer>
+          </b-card></b-card-group
+        ></a
+      ></b-row
     >
   </div>
 </template>
@@ -49,7 +78,7 @@ export default {
   padding-top: 100px;
 }
 .text {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 .group {
   margin-bottom: 20px;
