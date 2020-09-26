@@ -10,7 +10,7 @@
         >@tahamalaldir</a
       >
     </div>
-    <div id="userbio" style="display: block;">
+    <div id="userbio">
       Düzce University Computer Engineering
     </div>
     <div id="about">
@@ -108,6 +108,7 @@ export default {
   font-size: 26px;
   font-family: 'Questrial', sans-serif;
   width: 100%;
+  display: block;
 }
 #about {
   font-size: 18px;
@@ -118,5 +119,17 @@ export default {
   color: #fff !important;
   text-decoration: none;
   font-weight: bold;
+}
+@media screen and (max-width: 980px) {
+  #profile {
+    position: static;
+    height: auto;
+    width: 70vh;
+    word-wrap: break-word;
+  }
+  #profile_img {
+    width: 150px;
+    height: 150px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template
   ><div class="work">
     <b-row><h1 class="text">Work</h1></b-row>
-    <b-row>
+    <b-row class="row">
       <a
         v-for="user in users"
         :key="user.id"
@@ -11,6 +11,7 @@
         <b-card-group v-if="!user.fork" class="group"
           ><b-card class="text-center">
             <b-card-title>{{ user.name }}</b-card-title>
+            <b-card-text>{{ user.description }}</b-card-text>
             <b-card-footer>
               <span v-if="user.language"
                 ><i class="fas fa-code"></i>&nbsp;
@@ -36,6 +37,8 @@
         <b-card-group v-if="user.fork" class="group"
           ><b-card class="text-center">
             <b-card-title>{{ user.name }}</b-card-title>
+            <b-card-text>{{ user.description }}</b-card-text>
+
             <b-card-footer>
               <span v-if="user.language"
                 ><i class="fas fa-code"></i>&nbsp;
@@ -79,13 +82,17 @@ export default {
 }
 .text {
   font-size: 4rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-weight: bold;
 }
 .group {
-  float: left;
   color: #41444b;
+  float: left;
 }
 .card {
-  width: 450px;
+  width: 30rem;
+  height: auto;
   display: block;
   top: 0px;
   position: relative;
@@ -104,17 +111,18 @@ export default {
   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
   top: -4px;
   border: 1px solid #cccccc;
-  background-color: white;
+  background-color: #41444b;
+  color: #f2f8f9;
 }
 .card:before {
   content: '';
   position: absolute;
   z-index: -1;
-  top: -16px;
-  right: -16px;
-  background: #41444b;
-  height: 32px;
-  width: 32px;
+  top: -20px;
+  right: -20px;
+  background: white;
+  height: 35px;
+  width: 35px;
   border-radius: 32px;
   -webkit-transform: scale(2);
   transform: scale(2);
