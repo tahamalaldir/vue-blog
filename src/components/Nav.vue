@@ -11,7 +11,8 @@
       >
     </div>
     <div id="userbio">
-      Düzce University Computer Engineering
+      Düzce University<br />
+      Computer Engineering
     </div>
     <div id="about">
       <span style="display:block;"
